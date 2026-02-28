@@ -23,7 +23,7 @@ To run this project locally, you will need **Node.js**, **PostgreSQL** installed
 
 ### 1. Clone the Repository
 \`\`\`bash
-git clone https://github.com/YOUR_USERNAME/CipherSQL.git
+git clone : https://github.com/shishupalsahu/CipherSQL
 cd CipherSQL
 \`\`\`
 
