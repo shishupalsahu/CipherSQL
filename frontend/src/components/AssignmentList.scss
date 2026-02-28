@@ -1,0 +1,101 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+/* Block: assignment-list */
+.assignment-list {
+  padding: 1rem; // Mobile default
+
+  @include respond-to(tablet) {
+    padding: 2rem;
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+    color: $secondary-color;
+  }
+
+  &__message {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+
+    &--error { color: $error-color; }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr; // Mobile first: 1 column
+
+    @include respond-to(tablet) {
+      grid-template-columns: repeat(2, 1fr); // Tablet: 2 columns
+    }
+
+    @include respond-to(laptop) {
+      grid-template-columns: repeat(3, 1fr); // Desktop: 3 columns
+    }
+  }
+}
+
+/* Block: assignment-card */
+.assignment-card {
+  background-color: $surface-color;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    color: $text-primary;
+  }
+
+  &__badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    /* Modifiers for difficulty */
+    &--easy { background-color: #d1fae5; color: #065f46; }
+    &--medium { background-color: #fef3c7; color: #92400e; }
+    &--hard { background-color: #fee2e2; color: #991b1b; }
+  }
+
+  &__description {
+    color: $text-secondary;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  &__button {
+    text-align: center;
+    background-color: $primary-color;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    
+    &:hover {
+      background-color: darken(#2563eb, 10%);
+    }
+  }
+}
